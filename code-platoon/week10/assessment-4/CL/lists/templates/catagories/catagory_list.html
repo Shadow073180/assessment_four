@@ -1,0 +1,11 @@
+<h1> All Catagories </h1>
+
+<ul>
+  {% for catagory in catagories %}
+    <div>
+      <li><a href="{% url 'catagory_detail' catagory_id=catagory.id %}">{{ catagory.name }}</a></li>
+    </div>
+  {% endfor %}
+</ul>
+
+<a href="{% url 'new_catagory' %}">Create a new catagory</a>

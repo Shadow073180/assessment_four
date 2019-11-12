@@ -1,0 +1,13 @@
+<div>
+  <h2>{{ catagory.name }}</h2>
+  <p> Name: {{ catagory.name|linebreaksbr }}</p>
+  <br>
+  <br>
+  <a href="{% url 'edit_catagory' catagory_id=catagory.id %}"> Edit catagory</a>
+  <br>
+  <br>
+  <form name="delete_catagory" method="POST" action="{% url 'delete_catagory' catagory_id=catagory.id %}">
+    {% csrf_token %}
+    <input type="submit" value="Delete cohort" />
+  </form>
+</div>
