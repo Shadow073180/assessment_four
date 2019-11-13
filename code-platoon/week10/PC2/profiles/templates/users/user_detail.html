@@ -1,0 +1,40 @@
+
+
+
+<div>
+  <h2>{{ user.picture }}</h2> 
+    <h1>{{ user.first_name}} {{ user.last_name}}</h1>
+</div>
+<div>
+  <h3>Pet:<a href="{% url 'pet_detail' user_id=user.id pet_id=pet.id %}"> {{ user.pet}}</a></h3>
+  <h3>{{ user.city}}</h3>
+  <h3>{{ user.state }}</h3>
+  <h3>{{ user.zip}}</h3>
+  <h3>{{ user.user_age}}</h3>
+  <h3>{{ user.looking_for}}</h3>
+  <h3>{{ user.eye_color}}</h3>
+  <h3>{{ user.hair_color}}</h3>
+  <h3>{{ user.height}}</h3>
+  <h3>{{ user.body_type}}</h3>
+  <h3>{{ user.smoker}}</h3>
+  <h3>{{ user.chewer}}</h3>
+  <h3>{{ user.vaper}}</h3>
+</div>
+  <br>
+  <br>
+  <a href="{% url 'edit_user' user_id=user.id %}"> Edit user</a>
+  <br>
+  <br>
+  <form name="delete_user" method="POST" action="{% url 'delete_user' user_id=user.id %}">
+    {% csrf_token %}
+    <input type="submit" value="Delete user" />
+  </form>
+  <hr/>
+<div>
+  <a href="{% url 'pets_list' user_id=user.id %}">Pets in this family</a>
+</div>
+
+
+    
+
+    

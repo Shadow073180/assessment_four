@@ -1,0 +1,10 @@
+<h1> All Pets for {{ user.first_name }} {{user.last_name}} </h1>
+<ul>
+  {% for pet in pets %}
+    <div>
+      <li><a href="{% url 'pet_detail' user_id=user.id pet_id=pet.id %}">{{ pet.name }}</a></li>
+    </div>
+  {% endfor %}
+</ul>
+
+<a href="{% url 'new_pet' user_id=user.id %}">Add a new pet to family</a>
